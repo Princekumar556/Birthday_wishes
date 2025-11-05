@@ -5,144 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Birthday Utkarsh Bhaiya</title>
   <style>
+    :root {
+      --royal1: #001f3f;
+      --royal2: #002b5b;
+      --gold: #FFD700;
+    }
     body {
       margin: 0;
-      padding: 0;
-      background: radial-gradient(circle, #001f3f, #000814);
-      color: gold;
+      background: radial-gradient(circle, var(--royal2), #000814);
+      color: var(--gold);
       font-family: 'Poppins', sans-serif;
       text-align: center;
       overflow: hidden;
     }
+    h1 { font-size: 2rem; margin-top: 20px; }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 20px;
-    }
-
-    .hidden {
-      display: none;
-    }
-
+    /* 🎁 Gift Box */
     .gift-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
+      position: absolute; top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
       animation: float 2s ease-in-out infinite;
+      z-index: 50;
     }
-
     @keyframes float {
-      0%, 100% { transform: translate(-50%, -48%); }
+      0%,100% { transform: translate(-50%, -48%); }
       50% { transform: translate(-50%, -52%); }
     }
-
     .gift-box {
-      background: gold;
-      color: #001f3f;
-      padding: 20px 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px gold;
-      font-weight: bold;
-      font-size: 1.2rem;
+      background: var(--gold); color: var(--royal1);
+      padding: 18px 30px; border-radius: 12px;
+      font-weight: bold; box-shadow: 0 0 25px gold;
     }
-
     .open-btn {
-      margin-top: 20px;
-      background: #001f3f;
-      color: gold;
-      border: 2px solid gold;
-      padding: 10px 25px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: 0.3s;
+      margin-top: 15px; background: var(--royal1);
+      color: var(--gold); border: 2px solid var(--gold);
+      padding: 10px 25px; border-radius: 8px; font-weight: bold;
+      cursor: pointer; transition: 0.3s;
     }
+    .open-btn:hover { background: var(--gold); color: var(--royal1); }
 
-    .open-btn:hover {
-      background: gold;
-      color: #001f3f;
-    }
+    /* 🎂 Main Content */
+    .hidden { display: none; }
+    .content { margin-top: 100px; animation: fadeIn 1s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    .content {
-      margin-top: 100px;
-      animation: fadeIn 1.5s ease-in-out;
+    .profile {
+      width: 140px; height: 140px;
+      border-radius: 50%; border: 4px solid var(--gold);
+      overflow: hidden; margin: 20px auto;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    .profile img { width: 100%; height: 100%; object-fit: cover; }
 
     .wish-btn {
-      background: gold;
-      color: #001f3f;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-top: 40px;
+      background: var(--gold); color: var(--royal1);
+      border: none; padding: 12px 25px;
+      border-radius: 8px; font-weight: bold; font-size: 1.1rem;
+      cursor: pointer; transition: 0.3s;
     }
+    .wish-btn:hover { background: #ffcc00; }
 
-    .wish-btn:hover {
-      background: #ffcc00;
-    }
-
-    #cardContainer {
-      margin-top: 30px;
-    }
-
+    /* 💌 Wish Card */
+    #cardContainer { margin-top: 30px; }
     .wish-card {
-      background: linear-gradient(135deg, #002b5b, #001f3f);
-      border: 3px solid gold;
-      border-radius: 16px;
-      color: gold;
-      padding: 25px;
-      margin: 20px auto;
-      width: 320px;
-      height: 320px;
-      box-shadow: 0 0 20px gold;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      width: 320px; height: 320px; aspect-ratio: 1/1;
+      background: linear-gradient(135deg, var(--royal2), var(--royal1));
+      border: 3px solid var(--gold); border-radius: 16px;
+      color: var(--gold); box-shadow: 0 0 20px gold;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      margin: 20px auto; padding: 20px;
     }
+    .card-photo {
+      width: 100px; height: 100px; border-radius: 50%;
+      border: 3px solid var(--gold); overflow: hidden; margin-bottom: 10px;
+    }
+    .card-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-    .wish-card h2 {
-      margin: 0;
-      font-size: 22px;
-      color: #ffeb99;
-    }
-
-    .wish-card p {
-      margin-top: 12px;
-      font-size: 15px;
-      color: #fff6c2;
-    }
+    .wish-card h2 { margin: 0; font-size: 1.1rem; color: #ffeb99; }
+    .wish-card p { margin-top: 10px; font-size: 0.9rem; color: #fff6c2; }
 
     .download-btn {
-      background: gold;
-      color: #001f3f;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 15px;
+      background: var(--gold); color: var(--royal1);
+      border: none; padding: 8px 15px;
+      border-radius: 8px; font-weight: bold;
+      cursor: pointer; margin-top: 12px;
     }
 
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
+    /* 🎆 Confetti Canvas */
+    canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 10; }
   </style>
 </head>
 <body>
@@ -155,11 +107,13 @@
 
   <div class="content hidden" id="wishContent">
     <h1>🎉 Happy Birthday Utkarsh Bhaiya 🎉</h1>
-    <p>Wishing you endless joy, success, and happiness on your special day. May your year be as amazing as you are! 💫</p>
-    <img id="photo" src="A.jpg" alt="Utkarsh Bhaiya" style="border: 3px solid gold; border-radius: 15px; margin-top: 20px;" />
-    <div>
-      <button class="wish-btn" onclick="wishUtkarsh()">Wish Utkarsh Bhaiya 🎉</button>
+    <p>Wishing you endless joy, success, and happiness on your special day. 💫</p>
+
+    <div class="profile">
+      <img src="A.jpg" alt="Utkarsh Bhaiya">
     </div>
+
+    <button class="wish-btn" onclick="wishUtkarsh()">Wish Utkarsh Bhaiya 🎉</button>
     <div id="cardContainer"></div>
   </div>
 
@@ -172,21 +126,17 @@
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    let confettis = [];
+    const confettis = [];
+    const colors = ['#FFD700', '#FFB700', '#FFFACD', '#F1C40F'];
 
     class Confetti {
       constructor(x, y, size, speed, color) {
-        this.x = x;
-        this.y = y;
-        this.size = size;
-        this.speed = speed;
-        this.color = color;
+        this.x = x; this.y = y;
+        this.size = size; this.speed = speed; this.color = color;
       }
       draw() {
-        ctx.beginPath();
-        ctx.rect(this.x, this.y, this.size, this.size);
         ctx.fillStyle = this.color;
-        ctx.fill();
+        ctx.fillRect(this.x, this.y, this.size, this.size);
       }
       update() {
         this.y += this.speed;
@@ -199,8 +149,7 @@
     }
 
     function createConfetti() {
-      const colors = ['#FFD700', '#FFB700', '#FFFACD', '#F1C40F'];
-      for (let i = 0; i < 200; i++) {
+      for (let i = 0; i < 300; i++) {
         const size = Math.random() * 10;
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
@@ -212,7 +161,7 @@
 
     function animateConfetti() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      confettis.forEach(confetti => confetti.update());
+      confettis.forEach(c => c.update());
       requestAnimationFrame(animateConfetti);
     }
 
@@ -224,36 +173,39 @@
         giftBox.classList.add('hidden');
         document.getElementById('wishContent').classList.remove('hidden');
         document.getElementById('bgMusic').play();
-        createConfetti();
-        animateConfetti();
+        createConfetti(); animateConfetti();
       }, 1000);
     }
 
     function wishUtkarsh() {
-      const userName = prompt('Enter your name:');
-      if (userName) {
-        const cardContainer = document.getElementById('cardContainer');
-        const card = document.createElement('div');
-        card.classList.add('wish-card');
-        card.innerHTML = `
-          <h2>🎂 Happy Birthday Utkarsh Bhaiya 🎂</h2>
-          <p>May your life be filled with happiness, success, and blessings always! 💛</p>
-          <p><b>Wishes from:</b> ${userName}</p>
-        `;
+      const name = prompt("Enter your name:");
+      if (!name) return;
 
-        const downloadBtn = document.createElement('button');
-        downloadBtn.classList.add('download-btn');
-        downloadBtn.onclick = () => downloadCard(card, userName);
-        card.appendChild(downloadBtn);
+      const cardContainer = document.getElementById('cardContainer');
+      cardContainer.innerHTML = '';
 
-        cardContainer.appendChild(card);
-      }
+      const card = document.createElement('div');
+      card.className = 'wish-card';
+      card.innerHTML = `
+        <div class="card-photo"><img src="A.jpg" alt="Utkarsh Bhaiya"></div>
+        <h2>🎂 Happy Birthday Utkarsh Bhaiya 🎂</h2>
+        <p>Wishing you joy, peace & golden memories! ✨</p>
+        <p><b>Wishes from:</b> ${name}</p>
+      `;
+
+      const downloadBtn = document.createElement('button');
+      downloadBtn.className = 'download-btn';
+      downloadBtn.textContent = 'Download Card';
+      downloadBtn.onclick = () => downloadCard(card, name);
+      card.appendChild(downloadBtn);
+
+      cardContainer.appendChild(card);
     }
 
-    function downloadCard(card, userName) {
+    function downloadCard(card, name) {
       html2canvas(card).then(canvas => {
         const link = document.createElement('a');
-        link.download = `HappyBirthday_${userName}.png`;
+        link.download = `Wish_Utkarsh_${name}.png`;
         link.href = canvas.toDataURL('image/png');
         link.click();
       });
